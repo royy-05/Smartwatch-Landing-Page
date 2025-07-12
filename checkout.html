@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout</title>
+    <link rel="stylesheet" href="checkout.css" />
+  </head>
+  <body>
+    <div class="checkout-container">
+      <div class="logo-nav">
+        <img src="images/Logo.png" alt="Logo" class="logo" />
+        <div class="icons">
+          <i class="icon-home">🏠</i>
+          <i class="icon-user">👤</i>
+          <i class="icon-menu">☰</i>
+        </div>
+      </div>
+
+      <h1 class="title">CHECKOUT</h1>
+
+      <div class="cart-summary" id="cart-summary">
+        <h2>Order Summary</h2>
+      </div>
+
+      <form class="checkout-form" id="checkout-form">
+        <label>Email</label>
+        <input type="email" placeholder="example@gmail.com" required />
+
+        <label>Name on card</label>
+        <input type="text" placeholder="YOUR NAME" required />
+
+        <label>Card Number</label>
+        <input
+          type="text"
+          placeholder="0000 0000 0000 0000"
+          maxlength="19"
+          required
+        />
+
+        <div class="row">
+          <div>
+            <label>MM/YY</label>
+            <input type="text" placeholder="01/25" maxlength="5" required />
+          </div>
+          <div>
+            <label>CVC</label>
+            <input type="text" placeholder="123" maxlength="3" required />
+          </div>
+        </div>
+
+        <button type="submit">PURCHASE</button>
+      </form>
+    </div>
+    <script>
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+      const summaryDiv = document.getElementById("cart-summary");
+
+      if (cart.length === 0) {
+        summaryDiv.innerHTML += "<p>Your cart is empty.</p>";
+      } else {
+        let total = 0;
+
+        cart.forEach((item) => {
+          let cleaned = item.price.toString().replace(/[^\d]/g, "");
+          let price = parseInt(cleaned);
+
+          total += price;
+
+          const itemDiv = document.createElement("div");
+          itemDiv.innerHTML = `
+        <p><strong>${item.name}</strong> — ₹${price.toLocaleString()}</p>
+      `;
+          summaryDiv.appendChild(itemDiv);
+        });
+
+        const totalDiv = document.createElement("p");
+        totalDiv.innerHTML = `<strong>Total: ₹${total.toLocaleString()}</strong>`;
+        summaryDiv.appendChild(totalDiv);
+      }
+
+      const form = document.getElementById("checkout-form");
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        alert("🎉 Purchase successful! Thank you for your order.");
+        localStorage.removeItem("cart");
+        window.location.href = "index.html";
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,137 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #0f1114;
+  font-family: sans-serif;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.checkout-container {
+  background-color: #1a1d22;
+  padding: 30px 20px;
+  border-radius: 15px;
+  width: 320px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  height: 550px;
+}
+
+.logo-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.logo {
+  height: 40px;
+}
+
+.icons i {
+  margin-left: 10px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.title {
+  font-size: 22px;
+  margin-bottom: 20px;
+  text-align: left;
+  font-weight: bold;
+}
+
+.checkout-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.checkout-form label {
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.checkout-form input {
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  width: 100%;
+  color: #000;
+}
+
+.row {
+  display: flex;
+  gap: 10px;
+}
+
+.row div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  margin-top: 20px;
+  background-color: #21465e;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #2f607f;
+}
+.cart-summary {
+  background-color: #2a2e35;
+  padding: 16px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  font-size: 14px;
+  color: #eaeff5;
+  box-shadow: inset 0 0 4px rgba(255, 255, 255, 0.05);
+}
+
+.cart-summary h2 {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.cart-summary p {
+  margin: 6px 0;
+  color: #ccc;
+}
+@media (max-width: 768px) {
+  .checkout-container {
+    width: 90%;
+    padding: 20px;
+    height: auto;
+  }
+
+  .checkout-form input,
+  .checkout-form button {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .checkout-form label {
+    font-size: 13px;
+  }
+
+  .row {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
