@@ -32,10 +32,10 @@ You can also host it via GitHub Pages or Netlify to make it live!
 
 📝 Notes
 No external libraries/frameworks used (pure HTML/CSS/JS).
-
 No backend integration — purely frontend-based simulation.
-
 Designed for educational, portfolio, and UI demonstration purposes.
+
+live link :- https://royy-05.github.io/Smartwatch-Landing-Page/
 
 👨‍💻 Author
 Name: Ronit Roy
