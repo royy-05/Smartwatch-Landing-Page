@@ -35,8 +35,6 @@ No external libraries/frameworks used (pure HTML/CSS/JS).
 No backend integration — purely frontend-based simulation.
 Designed for educational, portfolio, and UI demonstration purposes.
 
-live link :- https://royy-05.github.io/Smartwatch-Landing-Page/
-
 👨‍💻 Author
 Name: Ronit Roy
 GitHub: (https://github.com/royy-05)
